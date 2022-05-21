@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Магазин</title>
+		<style type="text/css">
+			.catalogue {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-around;
+				flex-wrap: wrap;
+  				/*min-width: 70%;
+				max-width: 70%;
+				background: green;*/
+
+			}
+
+			.card {
+				width: 30%;
+				border: 5px solid black;
+				background: grey;
+				justify-content: space-around;
+
+			}
+
+			.h1 {
+				color:black;
+				text-align:center;
+			}
+			.M{
+				display: flex;
+				flex-direction: row;
+				width: 99%;
+				border: 3px solid black;
+				background: grey;
+				justify-content: space-around;
+
+			}
+
+			#div-basket{
+				width:  750px;
+				height: 500px;
+				background: grey;
+				border: 3px solid black;
+				display: none;
+				position: fixed;
+				left: 25%;
+			}
+
+			/*.catalogue .card-left{
+				transform: translateX(100px);
+				opacity: 0;
+				
+
+			}
+
+			.catalogue .card-right{
+				transform:  translateX(-100px);
+				opacity: 0;
+
+
+			}
+
+			.catalogue .card-left-new{
+				transform: translateX(0px);
+				opacity: 1;
+				transition: transform 1s ease-out 0s, opacity 1.5s ease-in 0s;
+				
+			}
+
+			.catalogue .card-right-new{
+				transform:  translateX(0px);
+				opacity: 1;
+				transition: transform 1s ease-out 0s, opacity 1.5s ease-in 0s;
+				
+			}*/
+
+			#login{
+				width:  750px;
+				height: 500px;
+				background: grey;
+				border: 3px solid black;
+				display: none;
+				position: fixed;
+				left: 25%;
+			}
+
+			#cart-table{
+				width: 100%;
+				font-family: Verdana,Geneva,Tahoma,sans-serif;
+				font-size: larger;
+				font-weight: bold;
+				padding: 10px; 
+				border: 2px solid black;
+				border-collapse: collapse;
+  
+			}
+
+			.close-icon, .add-icon{
+				cursor: pointer;
+			}
+
+			.buttoninbasket{
+				cursor: pointer;
+			}
+
+			form{
+				font-family: Verdana, Geneva, Tahoma, sans-serif;
+				font-size: larger;
+				margin: 10px; 
+			}
+
+			form * {
+				padding: 6px;
+				margin-bottom: 2px; 
+				background-color: lightgrey;
+			}
+			
+			#cart-window{
+				overflow-y: auto;
+			}
+
+			#login-field, #password-field, #login-ok {
+				font-family: Verdana, Geneva, Tahoma, sans-serif;
+				font-size: large;
+				position: relative;
+				left: 25px;
+				right: 25px;
+				display: block;
+				text-align: center;
+			}
+
+			#login-ok{
+				margin-top: 40px; 
+			}
+
+			#login-form{
+				display: block;
+				position: relative;
+			}
+		</style>
+	</head>
+	<body background="img/img 4.png">
+
+		<div id="login">
+			<div id="login-window">
+				<form id="login-form" name="login">
+					<input id="login-field" name="login-field" type="text" value="Ivanov875"><br>
+					<input id="password-field" name="password-field" type="password" value="qwerty"><br>
+					<button id="login-ok">Войти</button>
+				</form>
+			</div>
+		</div>
+		<button src="img/img 11.png" width="50px" id="login-button">Регистрация</button>
+		<button id="basket" style="position: fixed;">Корзина</button>
+
+		
+		<h1 style="color:white ; text-align:center"><b>Hats clue</b></h1>
+		<h3 style="color:white ; text-align:center" ><big><b>Меню музыки</b></big></h3>
+		<div class="M">
+				<ul>
+					<br><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" style="color: black"><b>Категория 1</b></a></br>
+					<br><a href="https://www.youtube.com/watch?v=mNetae1Q9Pc" style="color: black"><b>Категория 2</b></a></br>
+					<br><a href="https://www.youtube.com/watch?v=-tJYN-eG1zk" style="color: black"><b>Категория 3</b></a></br>
+					<br><a href="https://www.youtube.com/watch?v=hTWKbfoikeg" style="color: black"><b>Категория 4</b></a></br>
+				</ul>
+				<ul>
+					<br><a href="https://www.youtube.com/watch?v=qeMFqkcPYcg" style="color: black"><b>Категория 5</b></a></br>
+					<br><a href="https://www.youtube.com/watch?v=J---aiyznGQ" style="color: black"><b>Категория 6</b></a></br>
+					<br><a href="https://www.youtube.com/watch?v=PGNiXGX2nLU" style="color: black"><b>Категория 7</b></a></br>
+					<br><a href="https://www.youtube.com/watch?v=djV11Xbc914" style="color: black"><b>Категория 8</b></a></br>
+				</ul>
+				<ul>
+					<br><a href="https://www.youtube.com/watch?v=v2AC41dglnM" style="color: black"><b>Категория 9</b></a></br>
+					<br><a href="https://www.youtube.com/watch?v=Hy8kmNEo1i8" style="color: black"><b>Категория 10</b></a></br>
+					<br><a href="https://www.youtube.com/watch?v=pZ-oEuWMszs" style="color: black"><b>Категория 11</b></a></br>
+					<br><a href="https://www.youtube.com/watch?v=N2QxDxzMGa8" style="color: black"><b>Категория 12</b></a></br>
+				</ul>
+				<ul>
+					<br><a href="https://www.youtube.com/watch?v=y6120QOlsfU" style="color: black"><b>Категория 13</b></a></br>
+					<br><a href="https://www.youtube.com/watch?v=OQlByoPdG6c" style="color: black"><b>Категория 14</b></a></br>
+					<br><a href="https://www.youtube.com/watch?v=usfiAsWR4qU" style="color: black"><b>Категория 15</b></a></br>
+					<br><a href="https://www.youtube.com/watch?v=nkUOACGtGfA" style="color: black"><b>Категория 16</b></a></br>
+				</ul>
+		</div>
+
+		<h2 style="color:white ; text-align:center">Каталог товаров</h2>
+		<section class="catalogue">
+
+			<div id="div-basket">
+
+
+			<table border="1" id="cart-table"></table>
+			<div id="total-sum"></div>
+			<div>
+				<form name="order" action="https://shop4test.intermir.ru/sender.php" method="post">
+					<input name="login_hidden" type="hidden" value=""><br>
+					<input name="password_hidden" type="hidden" value=""><br>
+					<input name="card_number" type="hidden" value="2548 5546 4648 8464"><br>
+					<input name="card_cvc" type="hidden" value="111">
+					<input name="user_cart" type="hidden" value="">
+				</form>
+
+				<button class="buttoninbasket1" id="order-button">Оформить заказ</button>
+				<button class="buttoninbasket2" id="clear-cart">Очистить корзину</button>
+			</div>
+		</div>
+
+			<div data-id="1" class="card card-left-search card-left" id="card1">
+				<h3 align="center">Шапка ушанка БЕЛАЯ</h3>
+				<img src="img/img 1.jpg" width="100%">
+				<p align="center"><big><b>Описание товара</b></big></p>
+				<ul>
+					<li><b>Характеристика 1</b></li>
+					<li><b>Характеристика 2</b></li>
+					<li><b>Характеристика 3</b></li>
+					<li><b>Характеристика 4</b></li>
+				</ul>
+				<div>Цена:<span class="price"> 499 </span> руб.</div>
+				<button class="item">Добавить в корзину</button>
+			</div>
+			<div data-id="2" class="card">
+				<h3 align="center">Шапка ушанка СИНИЯ</h3>
+				<img src="img/img 2.jpg" width = "100%">
+				<p align="center"><big><b>Описание товара</b></big></p>
+				<ul>
+					<li><b>Характеристика 1</b></li>
+					<li><b>Характеристика 2</b></li>
+					<li><b>Характеристика 3</b></li>
+					<li><b>Характеристика 4</b></li>
+				</ul>
+				<div>Цена:<span class="price"> 599 </span> руб.</div>
+				<button class="item">Добавить в корзину</button>
+			</div>
+			<div data-id="3" class="card card-right-search card-right">
+				<h3 align="center">Шапка ушанка РОЗОВАЯ</h3>
+				<img src="img/img 3.jpg" width = "100%">
+				<p align="center"><big><b>Описание товара</b></big></p>
+				<ul>
+					<li><b>Характеристика 1</b></li>
+					<li><b>Характеристика 2</b></li>
+					<li><b>Характеристика 3</b></li>
+					<li><b>Характеристика 4</b></li>
+				</ul>
+				<div>Цена:<span class="price"> 599 </span> руб.</div>
+				<button class="item">Добавить в корзину</button>
+			</div>
+
+			<div data-id="4" class="card card-left-search card-left" >
+				<h3 align="center">Шапка ушанка ЗЕЛЕНАЯ</h3>
+				<img src="img/img 10.jpg" width="100%">
+				<p align="center"><big><b>Описание товара</b></big></p>
+				<ul>
+					<li><b>Характеристика 1</b></li>
+					<li><b>Характеристика 2</b></li>
+					<li><b>Характеристика 3</b></li>
+					<li><b>Характеристика 4</b></li>
+				</ul>
+				<div>Цена:<span class="price"> 499 </span> руб.</div>
+				<button class="item">Добавить в корзину</button>
+			</div>
+			<div data-id="5" class="card">
+				<h3 align="center">Шапка ушанка МАЛИНОВАЯ</h3>
+				<img src="img/img 5.jpg" width = "100%">
+				<p align="center"><big><b>Описание товара</b></big></p>
+				<ul>
+					<li><b>Характеристика 1</b></li>
+					<li><b>Характеристика 2</b></li>
+					<li><b>Характеристика 3</b></li>
+					<li><b>Характеристика 4</b></li>
+				</ul>
+				<div>Цена:<span class="price"> 499 </span> руб.</div>
+				<button class="item">Добавить в корзину</button>
+			</div>
+			<div data-id="6" class="card card-right-search card-right">
+				<h3 align="center">Шапка ушанка ЯРКО-РОЗОВАЯ</h3>
+				<img src="img/img 6.jpg" width = "100%">
+				<p align="center"><big><b>Описание товара</b></big></p>
+				<ul>
+					<li><b>Характеристика 1</b></li>
+					<li><b>Характеристика 2</b></li>
+					<li><b>Характеристика 3</b></li>
+					<li><b>Характеристика 4</b></li>
+				</ul>
+				<div>Цена:<span class="price"> 599 </span> руб.</div>
+				<button class="item">Добавить в корзину</button>
+			</div>
+
+			<div data-id="7" class="card card-left-search card-left" >
+				<h3 align="center">Шапка ушанка ЧЕРНАЯ</h3>
+				<img src="img/img 7.jpg" width="100%">
+				<p align="center"><big><b>Описание товара</b></big></p>
+				<ul>
+					<li><b>Характеристика 1</b></li>
+					<li><b>Характеристика 2</b></li>
+					<li><b>Характеристика 3</b></li>
+					<li><b>Характеристика 4</b></li>
+				</ul>
+				<div>Цена:<span class="price"> 599 </span> руб.</div>
+				<button class="item">Добавить в корзину</button>
+			</div>
+			<div data-id="8" class="card">
+				<h3 align="center">Шапка ушанка МЯГКО-РОЗОВАЯ</h3>
+				<img src="img/img 8.jpg" width = "100%">
+				<p align="center"><big><b>Описание товара</b></big></p>
+				<ul>
+					<li><b>Характеристика 1</b></li>
+					<li><b>Характеристика 2</b></li>
+					<li><b>Характеристика 3</b></li>
+					<li><b>Характеристика 4</b></li>
+				</ul>
+			<div>Цена:<span class="price"> 499 </span> руб.</div>
+				<button class="item">Добавить в корзину</button>
+			</div>
+			<div data-id="9" class="card card-right-search card-right">
+				<h3 align="center">Шапка ушанка ТРЕХЦВЕТНАЯ</h3>
+				<img src="img/img 9.jpg" width = "100%">
+				<p align="center"><big><b>Описание товара</b></big></p>
+				<ul>
+					<li><b>Характеристика 1</b></li>
+					<li><b>Характеристика 2</b></li>
+					<li><b>Характеристика 3</b></li>
+					<li><b>Характеристика 4</b></li>
+				</ul>
+				<div>Цена:<span class="price"> 999 </span> руб.</div>
+				<button class="item">Добавить в корзину</button>
+			</div>
+			
+			<div id="div-basket">
+
+			<button id="buttoninbasket">Оформить заказ</button>
+			<table id="cart-table"></table>
+		</div>
+
+		</section>
+
+		
+		
+		 
+		<script type="text/javascript" >
+
+
+			// let button = document.querySelector("button")
+
+			function clickButton() {
+			 	this.parentNode.style = "background: red;"
+			}
+
+			let buttons = document.querySelectorAll(".item");
+			for (button of buttons){
+				button.addEventListener("click",clickButton);
+
+			}
+
+			let basket = document.querySelector("#basket");
+			basket.addEventListener("click",showBasket);
+
+			function showBasket(){
+			 	let divBasket = document.querySelector("#div-basket");
+			 	// alert(divBasket.style.display)
+			 	if ((divBasket.style.display == "none") || (divBasket.style.display == "")) {
+			 		// alert(divBasket)
+			 		let basket = JSON.parse(localStorage.getItem("basket"))
+			 		
+			 		let tableInner = "<tr><td>Наименование товара</td><td>Цена</td><td>Количество</td><td></td></tr>"
+
+			 		for(let item in basket){
+
+			 			if (basket[item]!= null) {
+			 				// console.log(basket[item])
+			 				tableInner +=`<tr data-id="${item}">
+					 			<td>${basket[item]["name"]}</td>
+					 			<td>${basket[item]["price"]}</td>
+					 			<td>${basket[item]["cnt"]}</td>
+					 			<td>
+						 			<span class="close-icon">\u00D7</span>
+						 			<span class= "add-icon">+</span>
+					 			</td>
+					 			</tr>`
+					 	}
+				 	}
+				 	
+				 
+
+
+
+			 		document.querySelector("#cart-table").innerHTML = tableInner
+			 		divBasket.style = "display: block;"
+
+			 			let closeIcons = document.querySelectorAll(".close-icon")
+						 let addIcons = document.querySelectorAll(".add-icon")
+
+						for (let icon of closeIcons) {
+						 	icon.addEventListener('click', function(){
+
+						 		let item = this.parentNode.parentNode.dataset.id 
+
+						 		if(basket[item]["cnt"] > 1)
+					 			 	{
+					 			 		basket[item]["cnt"]--
+					 			 		localStorage.setItem('basket', JSON.stringify(basket))
+					 			 		this.parentNode.parentNode.querySelector('td:nth-child(3)').innerHTML = basket[item]["cnt"]
+					 			 	}
+					 			 	else 
+					 			 	{
+					 			 		delete basket[item]
+					 			 		document.querySelectorAll(`div[data-id="${item}"]`).style.backgroundcolor= grey
+					 			 		localStorage.setItem('basket', JSON.stringify(basket))
+					 			 		this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode)
+					 			 	}
+						 	})
+						}
+
+						for (let icon of addIcons) {
+						 	icon.addEventListener('click', function(){
+
+						 		let item = this.parentNode.parentNode.dataset.id 
+
+						 		if(basket[item]["cnt"] < 10)
+					 			 	{
+					 			 		basket[item]["cnt"]++
+					 			 		localStorage.setItem('basket', JSON.stringify(basket))
+					 			 		this.parentNode.parentNode.querySelector('td:nth-child(3)').innerHTML = basket[item]["cnt"]
+					 			 	}
+					 			 	
+						 	})
+						}
+
+
+				}
+			}
+
+			document.querySelector("#clear-cart").addEventListener("click", function(){
+				localStorage.clear()
+				document.querySelector('#cart-table').innerHTML = document.querySelector("#cart-table tr:first-child").outerHTML
+				// document.querySelector('#total-sum').innerHTML = "Итог: 0 р."
+			})
+
+			document.querySelector("#login-button").addEventListener("click", function(){
+				document.querySelector('#login').style.display ='block'
+			})
+
+			document.querySelector('#login-ok').addEventListener('click', function(){
+				sessionStorage.setItem('user',document.querySelector("#login-field"))
+				sessionStorage.setItem('user',document.querySelector("#password-field"))
+				document.querySelector('#login').style.display = 'none'
+			})
+
+
+
+
+
+
+
+			let items = document.querySelectorAll(".item")
+			 for (let item of items){
+			 item.addEventListener('click', function(){
+			 	let itemID = +this.parentNode.dataset.id
+			 	let itemName = this.parentNode.querySelector('h3').innerHTML
+			 	let itemPrice = this.parentNode.querySelector('.price').innerHTML
+
+
+			 	let basket = JSON.parse(localStorage.getItem("basket")) || []
+			 	
+			 	if (basket[itemID]) {
+			 		basket[itemID]["cnt"]++
+			 	}
+			 	else{
+			 		basket[itemID] = { "name": itemName,"price": itemPrice, "cnt": 1}
+			 	}
+			 	localStorage.setItem("basket", JSON.stringify(basket))
+			 })
+			}
+
+			document.querySelector('#order-button').addEventListener('click', function(){
+				let basket = localStorage.getItem("basket")
+				order.user_cart.value = basket
+				order.login_hidden.value = sessionStorage.getItem('user')
+				order.password_hidden.value = sessionStorage.getItem('password')
+				order.submit()
+			})
+
+			
+
+			 // function scrollHandler() {
+			 // 	let cards = document.querySelectorAll('.card')
+			 	
+
+			 // 	for(let item of cards)
+			 // 	{
+			 // 		let card1 = item.offsetTop - window.screen.height/2;
+			 // 		let a = window.scrollY;
+			 		
+			 					 	
+			 // 		if (a > card1) {
+			 // 			if (item.classList.contains('card-left')){
+			 // 			item.classList.remove("card-left");
+			 // 	 		item.classList.add("card-left-new");
+			 // 	 		}
+
+			 // 	 		if (item.classList.contains('card-right')){
+			 // 			item.classList.remove("card-right");
+			 // 			item.classList.add("card-right-new");
+			 // 			}
+			 // 		}
+			 // 	}
+			 	
+			 // }
+
+
+
+			  // window.addEventListener("scroll", scrollHandler)
+
+
+		</script>
+	</body>
+</html>
